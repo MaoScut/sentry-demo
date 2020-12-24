@@ -9,7 +9,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <button onClick={() => {
-            throw new Error('madp err')
+            throw new Error('madp err webpack plugin111')
           }}>break world</button>
         </header>
       </div>

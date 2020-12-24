@@ -1,5 +1,5 @@
 'use strict';
-
+const SentryWebpackPlugin = require("@sentry/webpack-plugin");
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
@@ -727,6 +727,16 @@ module.exports = function (webpackEnv) {
             }),
           },
         },
+      }),
+      new SentryWebpackPlugin({
+        // sentry-cli configuration
+        authToken: '4b3dbf8f8a2f4c08ab61f011d833ebc884d3600be6324ca0b8fdb0db705c7922',
+        org: "dong-n9",
+        project: "dong-n9",
+
+        // webpack specific configuration
+        include: ".",
+        ignore: ["node_modules", "webpack.config.js"],
       }),
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
